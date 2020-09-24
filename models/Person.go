@@ -1,6 +1,6 @@
 package models
 
-type commty struct {
+type Commty struct {
 	Name string
 	Age int
 	Sex string
