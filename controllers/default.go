@@ -21,12 +21,8 @@ func (c *MainController) Post() {
 	name := c.Ctx.Request.FormValue("name")
 	age := c.Ctx.Request.FormValue("age")
 	if name != "xiaomeng" && age != "20" {
-		c.Ctx.WriteString("请求错误，请重新尝试")
+		c.Ctx.WriteString("请求错误，请重新尝试。")
 		return
 	}
 	c.Ctx.WriteString("欢迎进入小梦的页面")
 }
-//func (c *MainController) Post(){
-//
-//
-//}
