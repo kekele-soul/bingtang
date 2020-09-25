@@ -14,8 +14,8 @@ type MainController struct {
 //Get请求
 func (c *MainController) Get() {
 	//获取数据
- 	user := c.Ctx.Input.Query("feiyue")
- 	psd := c.Ctx.Input.Query("0123")
+ 	user := c.Ctx.Input.Query("user")
+ 	psd := c.Ctx.Input.Query("psd")
 	if user != "xiaoliu" && psd != "12345" {
 		c.Ctx.ResponseWriter.Write([]byte("请求错误，请重新尝试"))
 		return
@@ -37,13 +37,13 @@ func (c *MainController) Post(){
 //读取前端页面
 	dataBytes,err :=ioutil.ReadAll(c.Ctx.Request.Body)
 	if err != nil {
-		c.Ctx.WriteString("接受错误")
+		c.Ctx.WriteString("接受错误,请重新尝试")
 		return
 	}
 	//解析前端页面
 	err =json.Unmarshal(dataBytes,&person)
 	if err != nil {
-		c.Ctx.WriteString("解析错误")
+		c.Ctx.WriteString("解析错误。git push origin HEADgit")
 		return
 	}
 	fmt.Println("姓名",person.Name)

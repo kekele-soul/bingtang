@@ -5,3 +5,9 @@ type Commty struct {
 	Age int
 	Sex string
 }
+type Sql struct {
+	Name string
+	Use string
+	Password string
+	Ip string
+}
