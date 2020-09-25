@@ -34,12 +34,13 @@ func (c *MainController) Get() {
 func (c *MainController) Post(){
 	//解析json格式
 	var person models.Commty
-
+//读取前端页面
 	dataBytes,err :=ioutil.ReadAll(c.Ctx.Request.Body)
 	if err != nil {
 		c.Ctx.WriteString("接受错误")
 		return
 	}
+	//解析前端页面
 	err =json.Unmarshal(dataBytes,&person)
 	if err != nil {
 		c.Ctx.WriteString("解析错误")
