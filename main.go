@@ -1,8 +1,9 @@
 package main
 
 import (
-	_ "kekele/routers"
 	"github.com/astaxie/beego"
+
+	_ "kekele/routers"
 )
 
 func main() {
